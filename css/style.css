@@ -1,0 +1,43 @@
+/*==== Global Styling ====*/
+html, body, main, main > * {
+    height: 100%;
+}
+
+/*==== Main Navigation ====*/
+#main-nav {
+    border-right: 1px solid #ccc;
+    position: absolute;
+    left: -130%;
+    transition: all 0.5s;
+    z-index: 1;
+    overflow-y: auto;
+}
+
+#main-nav.left-0 {
+    left: 0;
+}
+
+/*==== Map Elements ====*/
+.map-container {
+    width: 100%;
+}
+
+#map {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/*==== Media Breakpoint ====*/
+@media (min-width: 992px) {
+    .map-container {
+        width: 66.666667%;
+    }
+
+    #main-nav {
+        border-right: none;
+        position: static;
+        left: auto;
+        width: 33.333333%;
+    }
+}
