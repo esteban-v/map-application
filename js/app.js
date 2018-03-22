@@ -15,7 +15,7 @@ var Place = function(data){
             if( item !== "toJSON" && item !== "marker" ) obj[item] = self[item];
         });
         return obj;
-    }
+    };
 };
 
 var ViewModel = function (googleMap, placeList) {
@@ -107,7 +107,7 @@ var ViewModel = function (googleMap, placeList) {
                             venue = result.response.venue || {};
 
                         if ( JSON.stringify(venue) === "{}" ) {
-                            self.infoWindow.setContent("<h6>We're sorry but no places data is available</h6>")
+                            self.infoWindow.setContent("<h6>We're sorry but no places data is available</h6>");
                         } else {
                             // Store response
                             place.details = venue;
@@ -118,7 +118,7 @@ var ViewModel = function (googleMap, placeList) {
                             self.infoWindow.open(self.map, place.marker);
                         }
                     } else {
-                        self.infoWindow.setContent("<h6>We're sorry but the request to get details failed</h6>")
+                        self.infoWindow.setContent("<h6>We're sorry but the request to get details failed</h6>");
                     }
                 }
             };
@@ -182,7 +182,7 @@ var ViewModel = function (googleMap, placeList) {
         self.showNav( !self.showNav() );
         // Find nav toggler button to update 'aria-expanded' attribute accordingly
         var nav_button = event.path.find(function (item) {
-            return item.className.search(/navbar-toggler(?![\w-])/) > -1
+            return item.className.search(/navbar-toggler(?![\w-])/) > -1;
         });
         if(nav_button) nav_button.setAttribute('aria-expanded', self.showNav() );
     };
@@ -215,12 +215,12 @@ function initMap() {
                         venues = results.response.venues ? results.response.venues : [];
 
                     if (!venues.length) {
-                        alert("We're sorry but no places data is available")
+                        alert("We're sorry but no places data is available");
                     }
                     // Initialize Knockout bindings
                     ko.applyBindings(new ViewModel(map, venues));
                 } else {
-                    alert("We're sorry but the request to get places data failed")
+                    alert("We're sorry but the request to get places data failed");
                 }
             }
         };
