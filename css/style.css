@@ -1,5 +1,8 @@
 /*==== Global Styling ====*/
-html, body, main, main > * {
+html,
+body,
+main,
+main > * {
     height: 100%;
 }
 
