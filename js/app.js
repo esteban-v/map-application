@@ -215,12 +215,12 @@ function initMap() {
                         venues = results.response.venues ? results.response.venues : [];
 
                     if (!venues.length) {
-                        alert("We're sorry but no places data is available");
+                        alert("We're sorry but no places data is available.");
                     }
                     // Initialize Knockout bindings
                     ko.applyBindings(new ViewModel(map, venues));
                 } else {
-                    alert("We're sorry but the request to get places data failed");
+                    alert("We're sorry but the request to get places data failed.");
                 }
             }
         };
@@ -233,3 +233,7 @@ function initMap() {
     }
 
 }//-- end initMap()
+
+function mapError(){
+    alert("We're sorry but Google Maps failed to load, please refresh to try again.");
+}
